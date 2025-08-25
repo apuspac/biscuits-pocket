@@ -14,6 +14,7 @@ color = Color(0, 0.529412, 0.639216, 1)
 
 [node name="Pocket" parent="." instance=ExtResource("1_3fham")]
 position = Vector2(272, 528)
+scale = Vector2(0.75, 0.75)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false

@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1d4bk3w6fmal"]
+
+[ext_resource type="Script" uid="uid://dgcai7w1sssco" path="res://pockets/pocket.gd" id="1_4gm1h"]
+[ext_resource type="Texture2D" uid="uid://dpgyshkvraauk" path="res://pockets/pocket-front.png" id="1_ua83g"]
+[ext_resource type="Script" uid="uid://tdpxh34ngkc3" path="res://pockets/area_mouse_events.gd" id="3_jotv7"]
+[ext_resource type="PackedScene" uid="uid://drqtkr53dd7d6" path="res://pockets/arrow_ui.tscn" id="4_jotv7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ua83g"]
+size = Vector2(313, 267)
+
+[node name="Pocket" type="Node2D"]
+script = ExtResource("1_4gm1h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ua83g")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_jotv7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(5.5, 3.5)
+shape = SubResource("RectangleShape2D_ua83g")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ArrowUI" parent="." instance=ExtResource("4_jotv7")]
+position = Vector2(-5, -255)

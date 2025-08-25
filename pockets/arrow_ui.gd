@@ -6,6 +6,5 @@ signal arrow_left_clicked
 func _ready():
     arrow_area.area_left_clicked.connect(arrow_clicked)
 
-
 func arrow_clicked():
     arrow_left_clicked.emit()

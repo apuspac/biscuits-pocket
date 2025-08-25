@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1d4bk3w6fmal"]
+[gd_scene load_steps=7 format=3 uid="uid://b1d4bk3w6fmal"]
 
 [ext_resource type="Script" uid="uid://dgcai7w1sssco" path="res://pockets/pocket.gd" id="1_4gm1h"]
 [ext_resource type="Texture2D" uid="uid://dpgyshkvraauk" path="res://pockets/pocket-front.png" id="1_ua83g"]
 [ext_resource type="Script" uid="uid://tdpxh34ngkc3" path="res://pockets/area_mouse_events.gd" id="3_jotv7"]
 [ext_resource type="PackedScene" uid="uid://drqtkr53dd7d6" path="res://pockets/arrow_ui.tscn" id="4_jotv7"]
+[ext_resource type="PackedScene" uid="uid://1kcnchewseri" path="res://ui/label.tscn" id="5_14eq0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ua83g"]
 size = Vector2(313, 267)
@@ -23,7 +24,14 @@ script = ExtResource("3_jotv7")
 position = Vector2(5.5, 3.5)
 shape = SubResource("RectangleShape2D_ua83g")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="ArrowUI" parent="." instance=ExtResource("4_jotv7")]
 position = Vector2(-5, -255)
+
+[node name="Label" parent="." instance=ExtResource("5_14eq0")]
+offset_left = -87.0
+offset_top = -425.0
+offset_right = -47.0
+offset_bottom = -402.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-3, -159)

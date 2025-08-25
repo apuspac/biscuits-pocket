@@ -14,6 +14,12 @@ config/name="biscuits-pocket"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+video/size/resizable=false
+video/size/viewport_height=720
+video/size/viewport_width=1280
+
 [display]
 
 window/size/viewport_width=1280

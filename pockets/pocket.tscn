@@ -10,6 +10,7 @@
 size = Vector2(313, 267)
 
 [node name="Pocket" type="Node2D"]
+scale = Vector2(0.75, 0.75)
 script = ExtResource("1_4gm1h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -27,11 +28,8 @@ shape = SubResource("RectangleShape2D_ua83g")
 [node name="ArrowUI" parent="." instance=ExtResource("4_jotv7")]
 position = Vector2(-5, -255)
 
-[node name="Label" parent="." instance=ExtResource("5_14eq0")]
+[node name="BiscuitsLabel" parent="." instance=ExtResource("5_14eq0")]
 offset_left = -87.0
 offset_top = -425.0
 offset_right = -47.0
 offset_bottom = -402.0
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-3, -159)

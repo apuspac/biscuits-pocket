@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b1qewhdu2k5dn"]
 
-[ext_resource type="PackedScene" uid="uid://b1d4bk3w6fmal" path="res://pockets/pocket.tscn" id="1_3fham"]
 [ext_resource type="Script" uid="uid://be46hbuuajtgq" path="res://game/main_game.gd" id="1_7of5j"]
+[ext_resource type="Script" uid="uid://c75fgvt3xl3x4" path="res://pockets/pockets.gd" id="2_g4axw"]
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_7of5j")
@@ -12,9 +12,11 @@ offset_bottom = 720.0
 mouse_filter = 2
 color = Color(0, 0.529412, 0.639216, 1)
 
-[node name="Pocket" parent="." instance=ExtResource("1_3fham")]
-position = Vector2(272, 528)
-scale = Vector2(0.75, 0.75)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
+
+[node name="Pockets" type="Node2D" parent="."]
+script = ExtResource("2_g4axw")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)

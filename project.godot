@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="biscuits-pocket"
+run/main_scene="uid://b1qewhdu2k5dn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +20,10 @@ config/icon="res://icon.svg"
 video/size/resizable=false
 video/size/viewport_height=720
 video/size/viewport_width=1280
+
+[autoload]
+
+PocketEvent="*res://global/pocket_event.gd"
 
 [display]
 

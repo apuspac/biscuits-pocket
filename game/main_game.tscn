@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1qewhdu2k5dn"]
+[gd_scene load_steps=7 format=3 uid="uid://b1qewhdu2k5dn"]
 
 [ext_resource type="Script" uid="uid://be46hbuuajtgq" path="res://game/main_game.gd" id="1_7of5j"]
 [ext_resource type="Script" uid="uid://c75fgvt3xl3x4" path="res://pockets/pockets.gd" id="2_g4axw"]
+[ext_resource type="FontFile" uid="uid://dlpcclpfmmp34" path="res://ui/Stitch Party.ttf" id="3_g4axw"]
+[ext_resource type="PackedScene" uid="uid://6vc1fehb7qgy" path="res://ui/biscuits_count.tscn" id="4_t4f2l"]
+[ext_resource type="PackedScene" uid="uid://bu0wtq54sklt5" path="res://ui/phase_label.tscn" id="5_433cb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t4f2l"]
+font = ExtResource("3_g4axw")
+font_size = 32
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_7of5j")
@@ -20,3 +27,22 @@ script = ExtResource("2_g4axw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(640, 360)
+
+[node name="PhaseLabelDebug" type="Label" parent="."]
+offset_left = 32.0
+offset_top = 40.0
+offset_right = 72.0
+offset_bottom = 109.0
+label_settings = SubResource("LabelSettings_t4f2l")
+
+[node name="BiscuitsCount" parent="." instance=ExtResource("4_t4f2l")]
+offset_left = 568.0
+offset_top = 64.0
+offset_right = 568.0
+offset_bottom = 64.0
+
+[node name="PhaseLabel" parent="." instance=ExtResource("5_433cb")]
+offset_left = 576.0
+offset_top = 32.0
+offset_right = 576.0
+offset_bottom = 32.0

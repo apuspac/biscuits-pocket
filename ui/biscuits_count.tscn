@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://6vc1fehb7qgy"]
+
+[ext_resource type="Script" uid="uid://gp8nltm8tje3" path="res://ui/biscuits_count.gd" id="1_bv2tb"]
+[ext_resource type="FontFile" uid="uid://dlpcclpfmmp34" path="res://ui/Stitch Party.ttf" id="2_mbjsq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e0leq"]
+font = ExtResource("2_mbjsq")
+font_size = 32
+font_color = Color(0.823032, 0.468504, 3.85046e-07, 1)
+
+[node name="BiscuitsCount" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bv2tb")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "placehold"
+label_settings = SubResource("LabelSettings_e0leq")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu0wtq54sklt5"]
+
+[ext_resource type="FontFile" uid="uid://dlpcclpfmmp34" path="res://ui/Stitch Party.ttf" id="1_5fqab"]
+[ext_resource type="Script" uid="uid://dpuqr5raw2xml" path="res://ui/phase_label.gd" id="1_uuui7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uuui7"]
+font = ExtResource("1_5fqab")
+font_size = 32
+
+[node name="PhaseLabel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uuui7")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "place"
+label_settings = SubResource("LabelSettings_uuui7")
+horizontal_alignment = 1
+vertical_alignment = 1

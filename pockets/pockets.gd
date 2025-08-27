@@ -22,10 +22,18 @@ func _ready():
 
 
 func pocket_instantiate():
+
+
+
     var pocket = load(_pockets_scene_path).instantiate()
     pocket.position = _calc_pockets_pos()
 
+    # TODO: ポケットの並び替えの処理ほしい
+    # TODO: instantiate anim
+    await get_tree().create_timer(2.0).timeout
+
     self.add_child(pocket)
+
     pocket.pocket_choice_end.connect(_tally_choices)
     _pockets_num += 1
 
@@ -33,17 +41,20 @@ func pocket_instantiate():
 func _prepare_tally():
     _choice_end_pockets = 0
 
-
 func _tally_choices():
     _choice_end_pockets += 1
 
-    if _choice_end_pockets >= _pockets_num:
-        print_debug("rdyrdy")
-        pass
-        # emit choice_ended
+    # 全部のpokectsの選択が終わったら
+    if _choice_end_pockets == get_child_count():
+        # anim
+        PocketEvent.emit_pocket_action_ready()
 
+# pat pickupの処理実行
+func exe_pocket_action():
+    for pocket in get_children():
+        await pocket.act()
 
-
+    get_parent().biscuits_tally()
 
 
 # ほんとはいい感じに spaceを変えたいね～

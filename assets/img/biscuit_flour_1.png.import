@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db0desd3umhc0"
-path="res://.godot/imported/arror.png-b68539cf19c63b8a4fb63e5eb28e9e3a.ctex"
+uid="uid://cl8k6cbnbsunn"
+path="res://.godot/imported/biscuit_flour_1.png-c9b972974421cd5487b0026c0688fb6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pockets/arror.png"
-dest_files=["res://.godot/imported/arror.png-b68539cf19c63b8a4fb63e5eb28e9e3a.ctex"]
+source_file="res://assets/img/biscuit_flour_1.png"
+dest_files=["res://.godot/imported/biscuit_flour_1.png-c9b972974421cd5487b0026c0688fb6d.ctex"]
 
 [params]
 

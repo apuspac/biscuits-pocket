@@ -6,31 +6,41 @@ var _pockets_scene_path := "res://pockets/pocket.tscn"
 
 var _pockets_num : int = 0
 
-
-
-## spaceing
-var _spacing_x := 300
-var _spacing_y := 300
-var _start_x := 200
-var _start_y := 440
-var _pockets_row := 4
+# space new
+var _spacing :Vector2 = Vector2(300, 300)
+var _init_pos: Vector2 = Vector2(200, 600)
+var _pockets_cols = 4
 
 var _choice_end_pockets: int = 0
+
 
 func _ready():
     PocketEvent.pocket_choice_enabled.connect(_prepare_tally)
 
 
+func position_update():
+    # var pockets_col = 4 if get_child_count() > 4 else get_child_count()
+
+
+    # print_debug(pockets_cols)
+
+    for i in range(self.get_child_count()):
+        var pocket = get_child(i)
+
+        var row = i / _pockets_cols
+        var col = i % _pockets_cols
+        var target_pos = Vector2(_init_pos.x + (col * _spacing.x), _init_pos.y + (row * _spacing.y))
+
+        var tween = create_tween()
+        tween.tween_property(pocket, "position", target_pos, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+
+
+
 func pocket_instantiate():
-
-
 
     var pocket = load(_pockets_scene_path).instantiate()
     pocket.position = _calc_pockets_pos()
-
-    # TODO: ポケットの並び替えの処理ほしい
-    # TODO: instantiate anim
-    await get_tree().create_timer(2.0).timeout
 
     self.add_child(pocket)
 
@@ -59,25 +69,10 @@ func exe_pocket_action():
 
 # ほんとはいい感じに spaceを変えたいね～
 func _calc_pockets_pos() -> Vector2:
-    var index := _pockets_num
+    var i = get_child_count()
 
-    # match index:
-    #     0:
-    #         _start_x = 1280 / 2
-    #         _spacing_x = 0
-    #     1:
-    #         _start_x = (1280 - 300) / 2
-    #         _spacing_x = 300
-    #     2:
-    #         _start_x = (1280 - (2 * 250)) /2
-    #         _spacing_x = 250
-    #     _:
-    #         _spacing_x = 300
-    #         _start_x = 200
+    var row = i / _pockets_cols
+    var col = i % _pockets_cols
+    var target_pos = Vector2(_init_pos.x + (col * _spacing.x), _init_pos.y + (row * _spacing.y))
 
-
-
-    var col = index %  _pockets_row
-    var row = index / _pockets_row
-
-    return Vector2(_start_x + _spacing_x * col, _start_y  + _spacing_y * row)
+    return target_pos

@@ -6,6 +6,7 @@ signal pocket_choice_end
 @onready var _pockets_area = $Area2D
 @onready var _arrow_ui = $ArrowUI
 @onready var _label = $BiscuitsLabel
+@onready var _pat_hand = $Hand
 
 var biscuits_num: int
 var biscuits_limit: int = 10
@@ -27,6 +28,7 @@ func _ready():
 
     switch_choice_ui(false)
     _label.visible = false
+    _pat_hand.visible = false
 
     # init_data
     biscuits_num = 1
@@ -68,8 +70,10 @@ func _pocket_pat() -> void:
     # act
     print_debug("clicked")
     biscuits_num += randi_range(1, 4)
-    # TODO pat anim
+    # TODO pat hand anim
+    _pat_hand.visible = true
     await get_tree().create_timer(1.0).timeout
+    _pat_hand.visible = false
 
     if biscuits_num > biscuits_limit:
         # TODO pockets break anim

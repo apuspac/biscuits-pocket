@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq2lq3bernvff"
-path="res://.godot/imported/biscuit-w.png-914968e2ebaca6538f7d23d7d7bd2e11.ctex"
+uid="uid://dq1kojsggom4a"
+path="res://.godot/imported/hand_1.png-5b35a897d2d871498c587b901637d082.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://biscuits/biscuit-w.png"
-dest_files=["res://.godot/imported/biscuit-w.png-914968e2ebaca6538f7d23d7d7bd2e11.ctex"]
+source_file="res://assets/img/hand_1.png"
+dest_files=["res://.godot/imported/hand_1.png-5b35a897d2d871498c587b901637d082.ctex"]
 
 [params]
 

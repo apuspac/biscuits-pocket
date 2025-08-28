@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxjhgtwawarpb"
-path="res://.godot/imported/pocket-back.png-c2954cd097cc0d7e3d0f7a1b234f4d85.ctex"
+uid="uid://bjn2mvttbwlbc"
+path="res://.godot/imported/pokke.png-91980e6aa88e47d4db3d82eb174d3d4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pockets/pocket-back.png"
-dest_files=["res://.godot/imported/pocket-back.png-c2954cd097cc0d7e3d0f7a1b234f4d85.ctex"]
+source_file="res://pockets/img/pokke.png"
+dest_files=["res://.godot/imported/pokke.png-91980e6aa88e47d4db3d82eb174d3d4b.ctex"]
 
 [params]
 

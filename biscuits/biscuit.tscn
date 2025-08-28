@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d27hj6fli2gbt"]
 
-[ext_resource type="Texture2D" uid="uid://dq2lq3bernvff" path="res://biscuits/biscuit-w.png" id="1_03huk"]
+[ext_resource type="Texture2D" uid="uid://dq2lq3bernvff" path="res://biscuits/img/biscuit-w.png" id="1_03huk"]
 
 [node name="biscuit" type="Node2D"]
 

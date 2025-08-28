@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpgyshkvraauk"
-path="res://.godot/imported/pocket-front.png-2bace39a3c1ac246c4e386b545304a53.ctex"
+uid="uid://b2msepvwhmcac"
+path="res://.godot/imported/card_hand.png-35aa18b59de87c5e6c7dbc26064dfbe5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pockets/pocket-front.png"
-dest_files=["res://.godot/imported/pocket-front.png-2bace39a3c1ac246c4e386b545304a53.ctex"]
+source_file="res://assets/img/card_hand.png"
+dest_files=["res://.godot/imported/card_hand.png-35aa18b59de87c5e6c7dbc26064dfbe5.ctex"]
 
 [params]
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1d4bk3w6fmal"]
+[gd_scene load_steps=8 format=3 uid="uid://b1d4bk3w6fmal"]
 
 [ext_resource type="Script" uid="uid://dgcai7w1sssco" path="res://pockets/pocket.gd" id="1_4gm1h"]
-[ext_resource type="Texture2D" uid="uid://dpgyshkvraauk" path="res://pockets/pocket-front.png" id="1_ua83g"]
+[ext_resource type="Texture2D" uid="uid://bjn2mvttbwlbc" path="res://pockets/img/pokke.png" id="2_14eq0"]
 [ext_resource type="Script" uid="uid://tdpxh34ngkc3" path="res://pockets/area_mouse_events.gd" id="3_jotv7"]
 [ext_resource type="PackedScene" uid="uid://drqtkr53dd7d6" path="res://pockets/arrow_ui.tscn" id="4_jotv7"]
-[ext_resource type="PackedScene" uid="uid://1kcnchewseri" path="res://ui/label.tscn" id="5_14eq0"]
+[ext_resource type="PackedScene" uid="uid://1kcnchewseri" path="res://ui/num_label.tscn" id="5_14eq0"]
+[ext_resource type="PackedScene" uid="uid://caubix0sluyul" path="res://pockets/hand.tscn" id="6_hq25l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ua83g"]
 size = Vector2(313, 267)
@@ -14,7 +15,8 @@ scale = Vector2(0.75, 0.75)
 script = ExtResource("1_4gm1h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ua83g")
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_14eq0")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 
@@ -33,3 +35,7 @@ offset_left = -87.0
 offset_top = -425.0
 offset_right = -47.0
 offset_bottom = -402.0
+
+[node name="Hand" parent="." instance=ExtResource("6_hq25l")]
+visible = false
+position = Vector2(89.3333, 70.6667)

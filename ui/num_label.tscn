@@ -6,7 +6,7 @@
 font = ExtResource("1_sp5j7")
 font_size = 64
 
-[node name="Label" type="Label"]
+[node name="NumLabel" type="Label"]
 offset_right = 40.0
 offset_bottom = 23.0
 scale = Vector2(1.00803, 1)

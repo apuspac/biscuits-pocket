@@ -23,7 +23,7 @@ var biscuits_num:
 
 
 #### NOTE: end phase_num
-var _end_phase_num: int = 2
+var _end_phase_num: int = 10
 
 
 var end_scene_path := "res://game/end.tscn"
@@ -65,7 +65,10 @@ func _set_state(next_state: States) -> void:
 func _setup() -> void:
     phase_count += 1
 
-    # ポケット追加処理
+    # update pockets pos
+    await pockets_node.position_update()
+
+    # add pockets
     await pockets_node.pocket_instantiate()
 
     _set_state(States.CHOICE)

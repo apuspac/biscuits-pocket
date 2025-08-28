@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://dxibvxo2ubbb0"]
+[gd_scene load_steps=3 format=3 uid="uid://dxibvxo2ubbb0"]
+
+[ext_resource type="PackedScene" uid="uid://6vc1fehb7qgy" path="res://ui/biscuits_count.tscn" id="1_jvnui"]
+[ext_resource type="Script" uid="uid://dqm67aap76vkw" path="res://game/end.gd" id="1_uqgph"]
 
 [node name="End" type="Node2D"]
+script = ExtResource("1_uqgph")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.458405, 0.458405, 0.458405, 1)
+
+[node name="BiscuitsCount" parent="." instance=ExtResource("1_jvnui")]
+offset_left = 248.0
+offset_top = 256.0
+offset_right = 248.0
+offset_bottom = 256.0

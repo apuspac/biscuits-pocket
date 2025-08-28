@@ -14,17 +14,19 @@ var phase_count:
 
 
 var _biscuits_num: int
-var biscuites_num:
+var biscuits_num:
     get:
         return _biscuits_num
     set(value):
         _biscuits_num = value
         _biscuits_label.update_count(_biscuits_num)
 
-var _end_phase_num: int = 10
+
+#### NOTE: end phase_num
+var _end_phase_num: int = 2
 
 
-
+var end_scene_path := "res://game/end.tscn"
 
 @onready var pockets_node = $Pockets
 @onready var phase_label = $PhaseLabelDebug
@@ -79,7 +81,7 @@ func _resolve_start() -> void:
 
 
 func add_biscuits(num: int):
-    biscuites_num += num
+    biscuits_num += num
 
 
 func biscuits_tally():
@@ -100,10 +102,13 @@ func _resolve_pockets() -> void:
 func _choice_card():
     # is game end?
     if phase_count >= _end_phase_num:
-        phase_label.text = "CARD"
+        phase_label.text = "END"
         print_debug("owari~~")
         # scene_ change
-        return
+
+        PocketEvent.result_biscuits_num = biscuits_num
+        get_tree().change_scene_to_file(end_scene_path)
+
     else:
         await get_tree().create_timer(2.0).timeout
         _set_state(States.SETUP)

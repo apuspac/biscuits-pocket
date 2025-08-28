@@ -29,7 +29,7 @@ func _ready():
     _label.visible = false
 
     # init_data
-    biscuits_num = 0
+    biscuits_num = 1
 
 func _pocket_choice_start() -> void:
     is_choice_enable = true

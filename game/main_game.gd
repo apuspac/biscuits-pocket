@@ -66,7 +66,10 @@ func _setup() -> void:
     phase_count += 1
 
     # update pockets pos
-    await pockets_node.position_update()
+    var last_tween = pockets_node.position_update()
+    # 1個の場合はnullが帰ってくるので、弾く。
+    if last_tween:
+        await last_tween.finished
 
     # add pockets
     await pockets_node.pocket_instantiate()
@@ -79,9 +82,14 @@ func _choice() -> void:
     # globalで通知しちゃうか。
     PocketEvent.emit_pocket_choice_enabled()
 
+## connect pocket choice ready
+## すべての選択が終わって準備完了したら
 func _resolve_start() -> void:
     _set_state(States.RESOLVE)
 
+func _resolve_pockets() -> void:
+    pockets_node.exe_pocket_action()
+    # next tally()
 
 func add_biscuits(num: int):
     biscuits_num += num
@@ -96,9 +104,6 @@ func biscuits_tally():
     _set_state(States.CARD)
 
 
-func _resolve_pockets() -> void:
-    pockets_node.exe_pocket_action()
-    # next tally()
 
 
 

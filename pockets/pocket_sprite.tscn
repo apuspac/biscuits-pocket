@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvyyxn3wr04c3"]
+
+[ext_resource type="Script" uid="uid://lwi4apj6hf2c" path="res://pockets/pocket_sprite.gd" id="1_7ovic"]
+[ext_resource type="PackedScene" uid="uid://dg6ccpe4lcumf" path="res://pockets/pocket_normal_sprite.tscn" id="1_xs32w"]
+[ext_resource type="PackedScene" uid="uid://buj38yla52x6x" path="res://pockets/pocket_burst_sprite.tscn" id="2_7ovic"]
+
+[node name="PocketSprite" type="Node2D"]
+script = ExtResource("1_7ovic")
+
+[node name="NormalPocket" parent="." instance=ExtResource("1_xs32w")]
+
+[node name="BurstPocket" parent="." instance=ExtResource("2_7ovic")]
+visible = false

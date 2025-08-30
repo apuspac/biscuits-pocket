@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://buj38yla52x6x"]
+
+[ext_resource type="Texture2D" uid="uid://ksauauk4v5jh" path="res://pockets/img/pokke_yabure_ue.png" id="1_4dnq4"]
+
+[node name="BurstPocket" type="Node2D"]
+
+[node name="BurstSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_4dnq4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../BurstSprite")

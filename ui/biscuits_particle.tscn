@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://b61ymjcwoltvb"]
+
+[ext_resource type="Texture2D" uid="uid://b3nccjjbit7u6" path="res://biscuits/img/biscuit_flour_1.png" id="1_lsklx"]
+
+[sub_resource type="Gradient" id="Gradient_lsklx"]
+offsets = PackedFloat32Array(0.833333, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="BiscuitButterParticle1" type="CPUParticles2D"]
+emitting = false
+amount = 20
+texture = ExtResource("1_lsklx")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 300.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_lsklx")

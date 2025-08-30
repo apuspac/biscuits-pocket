@@ -1,8 +1,46 @@
-[gd_scene load_steps=2 format=3 uid="uid://d27hj6fli2gbt"]
+[gd_scene load_steps=8 format=3 uid="uid://d27hj6fli2gbt"]
 
-[ext_resource type="Texture2D" uid="uid://dq2lq3bernvff" path="res://biscuits/img/biscuit-w.png" id="1_03huk"]
+[ext_resource type="Texture2D" uid="uid://c0jmhhobc18lp" path="res://biscuits/img/biscuit_flour_1_chocolate.png" id="1_hkq7e"]
+[ext_resource type="Script" uid="uid://buyu8hesuujh6" path="res://biscuits/biscuit.gd" id="1_mnk3x"]
+[ext_resource type="Texture2D" uid="uid://b4xc4hkf42mrx" path="res://biscuits/img/biscuit_square_1_chocolate.png" id="2_mnk3x"]
+[ext_resource type="Texture2D" uid="uid://baakplsruy026" path="res://biscuits/img/biscuit_square_2_chocolate.png" id="3_yktcm"]
+[ext_resource type="Texture2D" uid="uid://b3nccjjbit7u6" path="res://biscuits/img/biscuit_flour_1.png" id="4_srp4t"]
+[ext_resource type="Texture2D" uid="uid://d1y0sb5buchru" path="res://biscuits/img/biscuit_square_1.png" id="5_kvu6r"]
+[ext_resource type="Texture2D" uid="uid://h3j6q7817n4v" path="res://biscuits/img/biscuit_square_2.png" id="6_oi47u"]
 
-[node name="biscuit" type="Node2D"]
+[node name="Biscuit" type="Node2D"]
+script = ExtResource("1_mnk3x")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_03huk")
+[node name="Choco" type="Node2D" parent="."]
+
+[node name="C1" type="Sprite2D" parent="Choco"]
+z_index = -2
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_hkq7e")
+
+[node name="C2" type="Sprite2D" parent="Choco"]
+z_index = -2
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_mnk3x")
+
+[node name="C3" type="Sprite2D" parent="Choco"]
+z_index = -2
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_yktcm")
+
+[node name="Butter" type="Node2D" parent="."]
+
+[node name="B1" type="Sprite2D" parent="Butter"]
+z_index = -2
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_srp4t")
+
+[node name="B2" type="Sprite2D" parent="Butter"]
+z_index = -2
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_kvu6r")
+
+[node name="B3" type="Sprite2D" parent="Butter"]
+z_index = -2
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("6_oi47u")

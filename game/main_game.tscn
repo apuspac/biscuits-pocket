@@ -18,10 +18,11 @@ font_size = 32
 script = ExtResource("1_7of5j")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+z_index = -10
 offset_left = -328.0
-offset_top = -832.0
+offset_top = -1432.0
 offset_right = 1664.0
-offset_bottom = 1744.0
+offset_bottom = 2584.0
 mouse_filter = 2
 color = Color(0, 0.529412, 0.639216, 1)
 
@@ -30,6 +31,7 @@ position = Vector2(0, -168)
 script = ExtResource("2_v3atx")
 
 [node name="Apron" type="Sprite2D" parent="BackgroundUI"]
+z_index = -5
 position = Vector2(640, 656)
 scale = Vector2(0.95, 0.95)
 texture = ExtResource("2_6o72v")

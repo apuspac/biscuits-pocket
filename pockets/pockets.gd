@@ -18,21 +18,24 @@ func _ready():
     PocketEvent.pocket_choice_enabled.connect(_prepare_tally)
 
 
-func position_update():
-    # var pockets_col = 4 if get_child_count() > 4 else get_child_count()
+func position_update() -> Tween:
 
-
-    # print_debug(pockets_cols)
+    var last_tween: Tween = null
 
     for i in range(self.get_child_count()):
         var pocket = get_child(i)
 
+        # gridに表示させる。
         var row = i / _pockets_cols
         var col = i % _pockets_cols
         var target_pos = Vector2(_init_pos.x + (col * _spacing.x), _init_pos.y + (row * _spacing.y))
 
         var tween = create_tween()
         tween.tween_property(pocket, "position", target_pos, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+        last_tween = tween
+
+    return last_tween
 
 
 
@@ -43,6 +46,7 @@ func pocket_instantiate():
     pocket.position = _calc_pockets_pos()
 
     self.add_child(pocket)
+    pocket.init_effect()
 
     pocket.pocket_choice_end.connect(_tally_choices)
     _pockets_num += 1
@@ -61,10 +65,15 @@ func _tally_choices():
 
 # pat pickupの処理実行
 func exe_pocket_action():
-    for pocket in get_children():
-        await pocket.act()
+    # awaitの付け方これでいい?
+    await loop_pocket_action()
 
     get_parent().biscuits_tally()
+
+func loop_pocket_action():
+    for pocket in get_children():
+        pocket.act()
+
 
 
 # ほんとはいい感じに spaceを変えたいね～

@@ -27,7 +27,12 @@ func _ready():
 
 func add_drum(fade_in_time: float = 1.0):
     if is_equal_approx(_drum.volume_db, -80.0):
-        create_tween().tween_property(_drum, "volume_db", 0.0, fade_in_time)
+        create_tween().tween_property(_drum, "volume_db", -20.0, fade_in_time)
+
+
+func stop_bgm():
+    _lead.stop()
+    _drum.stop()
 
 
 func play_SE(sound_wav: String, db: float = 0.0):

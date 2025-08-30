@@ -21,6 +21,7 @@ var biscuits_num:
         _biscuits_num = value
         _biscuits_label.update_count(_biscuits_num)
 
+var card_ability := []
 
 #### NOTE: end phase_num
 var _end_phase_num: int = 10
@@ -35,6 +36,7 @@ var end_scene_path := "res://game/end.tscn"
 @onready var _main_camera = $MainCamera2D
 @onready var _gameover_cover = $GameOverCover
 
+var choice_card_scene := preload("res://card/choice_card.tscn")
 
 
 
@@ -44,6 +46,7 @@ func _ready():
 
     PocketEvent.pocket_action_ready.connect(_resolve_start)
     PocketEvent.send_biscuits.connect(add_biscuits)
+    PocketEvent.card_selected.connect(_apply_card)
 
     await _main_camera.first_transition().finished
 
@@ -114,8 +117,6 @@ func biscuits_tally():
 
 
 
-
-
 func _choice_card():
     # is game end?
     if phase_count >= _end_phase_num:
@@ -128,8 +129,16 @@ func _choice_card():
         get_tree().change_scene_to_file(end_scene_path)
 
     else:
-        await get_tree().create_timer(2.0).timeout
-        _set_state(States.SETUP)
+        var choice_cards = choice_card_scene.instantiate()
+        choice_cards.global_position = _main_camera.global_position
+        self.add_child(choice_cards)
+
+
+func _apply_card(card_type: int):
+    await get_tree().create_timer(1.0).timeout
+    print_debug("card_type ", card_type)
+    card_ability.append(card_type)
+    _set_state(States.SETUP)
 
 
 func _update_ui():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b1qewhdu2k5dn"]
+[gd_scene load_steps=13 format=3 uid="uid://b1qewhdu2k5dn"]
 
 [ext_resource type="Script" uid="uid://be46hbuuajtgq" path="res://game/main_game.gd" id="1_7of5j"]
 [ext_resource type="Texture2D" uid="uid://c0pfa4begvxqq" path="res://assets/img/apron.png" id="2_6o72v"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dmvqj0p4enw5a" path="res://ui/main_camera_2d.tscn" id="5_pdiy6"]
 [ext_resource type="Script" uid="uid://b71hiuu6psphg" path="res://ui/main_camera_2d.gd" id="6_ult0l"]
 [ext_resource type="PackedScene" uid="uid://bfu4oqsplinew" path="res://ui/game_over_cover.tscn" id="10_ult0l"]
+[ext_resource type="PackedScene" uid="uid://bku00jslw7ubk" path="res://card/choice_card.tscn" id="11_8b6m4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t4f2l"]
 font = ExtResource("3_g4axw")
@@ -72,7 +73,12 @@ offset_right = 640.0
 offset_bottom = 88.0
 
 [node name="GameOverCover" parent="." instance=ExtResource("10_ult0l")]
+z_index = 2
 offset_left = 640.0
 offset_top = 272.0
 offset_right = 640.0
 offset_bottom = 272.0
+
+[node name="ChoiceCard" parent="." instance=ExtResource("11_8b6m4")]
+visible = false
+z_index = 1

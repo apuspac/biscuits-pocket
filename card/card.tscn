@@ -1,0 +1,76 @@
+[gd_scene load_steps=13 format=3 uid="uid://c1yktgbmdsy41"]
+
+[ext_resource type="Script" uid="uid://cmewpjmheg6sj" path="res://card/card.gd" id="1_fdnr0"]
+[ext_resource type="Texture2D" uid="uid://c1j07nb8mq0t4" path="res://assets/img/card_base.png" id="2_346uv"]
+[ext_resource type="Texture2D" uid="uid://bg3r6mkvycje3" path="res://assets/img/card_pokke.png" id="3_i6okx"]
+[ext_resource type="Script" uid="uid://tdpxh34ngkc3" path="res://pockets/area_mouse_events.gd" id="4_6xkbt"]
+[ext_resource type="Texture2D" uid="uid://dp7x3oxtgkwdi" path="res://assets/img/card_biscuit.png" id="4_ags6k"]
+[ext_resource type="Texture2D" uid="uid://b2msepvwhmcac" path="res://assets/img/card_hand.png" id="5_7dy67"]
+[ext_resource type="Texture2D" uid="uid://e3t15bvsoeeu" path="res://assets/img/biscuit_square_2.png" id="6_houxr"]
+[ext_resource type="Texture2D" uid="uid://yyvba55t2go8" path="res://assets/img/biscuit_flour_1_chocolate.png" id="7_1by4f"]
+[ext_resource type="Texture2D" uid="uid://cl8k6cbnbsunn" path="res://assets/img/biscuit_flour_1.png" id="8_b1k3d"]
+[ext_resource type="FontFile" uid="uid://dlpcclpfmmp34" path="res://ui/Stitch Party.ttf" id="10_7dy67"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3b74"]
+size = Vector2(168, 240)
+
+[sub_resource type="LabelSettings" id="LabelSettings_houxr"]
+font = ExtResource("10_7dy67")
+font_size = 32
+
+[node name="Card" type="Node2D"]
+z_index = 2
+script = ExtResource("1_fdnr0")
+
+[node name="Frame" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_346uv")
+
+[node name="Pict" type="Node2D" parent="."]
+
+[node name="Pocket" type="Sprite2D" parent="Pict"]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_i6okx")
+
+[node name="Biscuits" type="Sprite2D" parent="Pict"]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_ags6k")
+
+[node name="Hand" type="Sprite2D" parent="Pict"]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_7dy67")
+
+[node name="CardPict4" type="Sprite2D" parent="Pict"]
+visible = false
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_houxr")
+
+[node name="CardPict5" type="Sprite2D" parent="Pict"]
+visible = false
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_1by4f")
+
+[node name="CardPict6" type="Sprite2D" parent="Pict"]
+visible = false
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_b1k3d")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("4_6xkbt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4, 0)
+shape = SubResource("RectangleShape2D_s3b74")
+
+[node name="CardLabel" type="Label" parent="."]
+offset_left = -96.0
+offset_top = 128.0
+offset_right = 99.0
+offset_bottom = 169.0
+text = "place holder "
+label_settings = SubResource("LabelSettings_houxr")
+horizontal_alignment = 1
+vertical_alignment = 1

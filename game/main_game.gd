@@ -62,7 +62,7 @@ func _set_state(next_state: States) -> void:
             phase_label.text = "SETUP"
             _setup()
         States.CHOICE:
-            phase_label.text = "CHOICE"
+            phase_label.text = "CHOICE \n select \n arror or pockets"
             _choice()
         States.RESOLVE:
             phase_label.text = "RESOLVE"
@@ -111,7 +111,7 @@ func add_biscuits(num: int):
 
 func biscuits_tally():
     # TODO: biscuits num update anim?
-    await get_tree().create_timer(2.0).timeout
+    await get_tree().create_timer(3.0).timeout
 
     _set_state(States.CARD)
 
@@ -129,15 +129,19 @@ func _choice_card():
         get_tree().change_scene_to_file(end_scene_path)
 
     else:
-        var choice_cards = choice_card_scene.instantiate()
-        choice_cards.global_position = _main_camera.global_position
-        self.add_child(choice_cards)
+        # 5, 10 15 で 20で終わりにするとか。 もしくは 30
+        if (phase_count / 5) == 0 :
+            var choice_cards = choice_card_scene.instantiate()
+            choice_cards.global_position = _main_camera.global_position
+            self.add_child(choice_cards)
 
 
 func _apply_card(card_type: int):
-    await get_tree().create_timer(1.0).timeout
     print_debug("card_type ", card_type)
     card_ability.append(card_type)
+
+    print_debug("card_ability", card_ability)
+    await get_tree().create_timer(1.0).timeout
     _set_state(States.SETUP)
 
 

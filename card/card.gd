@@ -48,6 +48,7 @@ func other_selected(_card_type):
 func choice_card():
     _is_selected = true
     PocketEvent.emit_card_selected(card_type_id)
+    AudioPlayer.play_SE("pi")
 
     var tween = create_tween()
     tween.tween_property(

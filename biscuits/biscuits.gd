@@ -3,6 +3,8 @@ extends Node2D
 
 var biscuit_scene := preload("res://biscuits/biscuit.tscn")
 
+var TALLY_POSITION: Vector2 = Vector2(640, 144)
+
 func _ready():
     pass
 
@@ -36,9 +38,27 @@ func pickup_biscuits() -> Tween:
     return last_tween
 
 
+func tally_move_biscuits() -> Tween:
+    var last_tween: Tween
+    for biscuit in self.get_children():
+        # biscuit.position += Vector2(0.0, -100.0)
 
+        var tween = create_tween()
 
-func _tally():
-    pass
+        tween.parallel().tween_property(
+            biscuit,
+            "global_position",
+            TALLY_POSITION,
+            0.5
+        ).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+        tween.parallel().tween_property(
+            biscuit,
+            "modulate:a",
+            0.0,
+            0.5
+        ).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
+        last_tween = tween
+
+    return last_tween
     # choco限定で呼び出すときとか。
     # get_tree().call_group("Choco", "func", "arg")

@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://1brjghiabcn4"]
+
+[ext_resource type="Script" uid="uid://c38kvnry1tqoi" path="res://biscuits/biscuit_rigidbody.gd" id="1_c5d7q"]
+[ext_resource type="Texture2D" uid="uid://c0jmhhobc18lp" path="res://biscuits/img/biscuit_flour_1_chocolate.png" id="2_njtst"]
+[ext_resource type="Texture2D" uid="uid://b4xc4hkf42mrx" path="res://biscuits/img/biscuit_square_1_chocolate.png" id="3_twrk1"]
+[ext_resource type="Texture2D" uid="uid://baakplsruy026" path="res://biscuits/img/biscuit_square_2_chocolate.png" id="4_uus3b"]
+[ext_resource type="Texture2D" uid="uid://b3nccjjbit7u6" path="res://biscuits/img/biscuit_flour_1.png" id="5_l8t56"]
+[ext_resource type="Texture2D" uid="uid://d1y0sb5buchru" path="res://biscuits/img/biscuit_square_1.png" id="6_culeg"]
+[ext_resource type="Texture2D" uid="uid://h3j6q7817n4v" path="res://biscuits/img/biscuit_square_2.png" id="7_yluq8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c5d7q"]
+radius = 34.1321
+
+[node name="BiscuitRigidBody" type="Node2D"]
+script = ExtResource("1_c5d7q")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_c5d7q")
+
+[node name="Choco" type="Node2D" parent="RigidBody2D"]
+
+[node name="C1" type="Sprite2D" parent="RigidBody2D/Choco"]
+z_index = -2
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_njtst")
+
+[node name="C2" type="Sprite2D" parent="RigidBody2D/Choco"]
+z_index = -2
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_twrk1")
+
+[node name="C3" type="Sprite2D" parent="RigidBody2D/Choco"]
+z_index = -2
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_uus3b")
+
+[node name="Butter" type="Node2D" parent="RigidBody2D"]
+
+[node name="B1" type="Sprite2D" parent="RigidBody2D/Butter"]
+visible = false
+z_index = -2
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_l8t56")
+
+[node name="B2" type="Sprite2D" parent="RigidBody2D/Butter"]
+visible = false
+z_index = -2
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_culeg")
+
+[node name="B3" type="Sprite2D" parent="RigidBody2D/Butter"]
+visible = false
+z_index = -2
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_yluq8")

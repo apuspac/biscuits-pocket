@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dvyyxn3wr04c3" path="res://pockets/pocket_sprite.tscn" id="2_ys8dt"]
 [ext_resource type="Script" uid="uid://tdpxh34ngkc3" path="res://pockets/area_mouse_events.gd" id="3_jotv7"]
 [ext_resource type="PackedScene" uid="uid://drqtkr53dd7d6" path="res://pockets/arrow_ui.tscn" id="4_jotv7"]
-[ext_resource type="PackedScene" uid="uid://1kcnchewseri" path="res://ui/num_label.tscn" id="5_14eq0"]
 [ext_resource type="PackedScene" uid="uid://b61ymjcwoltvb" path="res://ui/biscuits_particle.tscn" id="6_hq25l"]
+[ext_resource type="PackedScene" uid="uid://1kcnchewseri" path="res://ui/biscuits_num_label.tscn" id="7_fbfx2"]
 [ext_resource type="PackedScene" uid="uid://cmnh4firtthav" path="res://biscuits/biscuits.tscn" id="7_ys8dt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ua83g"]
@@ -28,13 +28,11 @@ shape = SubResource("RectangleShape2D_ua83g")
 position = Vector2(0, -152)
 scale = Vector2(0.5, 0.5)
 
-[node name="BiscuitsLabel" parent="." instance=ExtResource("5_14eq0")]
-offset_left = -87.0
-offset_top = -425.0
-offset_right = -47.0
-offset_bottom = -402.0
-
 [node name="BiscuitButterParticle1" parent="." instance=ExtResource("6_hq25l")]
 z_index = -1
 
 [node name="Biscuits" parent="." instance=ExtResource("7_ys8dt")]
+
+[node name="BiscuitsNumLabel" parent="." instance=ExtResource("7_fbfx2")]
+offset_top = -336.0
+offset_bottom = -296.0

@@ -15,32 +15,32 @@ script = ExtResource("1_mnk3x")
 
 [node name="C1" type="Sprite2D" parent="Choco"]
 z_index = -2
-scale = Vector2(0.15, 0.15)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_hkq7e")
 
 [node name="C2" type="Sprite2D" parent="Choco"]
 z_index = -2
-scale = Vector2(0.15, 0.15)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_mnk3x")
 
 [node name="C3" type="Sprite2D" parent="Choco"]
 z_index = -2
-scale = Vector2(0.15, 0.15)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_yktcm")
 
 [node name="Butter" type="Node2D" parent="."]
 
 [node name="B1" type="Sprite2D" parent="Butter"]
 z_index = -2
-scale = Vector2(0.15, 0.15)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_srp4t")
 
 [node name="B2" type="Sprite2D" parent="Butter"]
 z_index = -2
-scale = Vector2(0.15, 0.15)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_kvu6r")
 
 [node name="B3" type="Sprite2D" parent="Butter"]
 z_index = -2
-scale = Vector2(0.15, 0.15)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("6_oi47u")

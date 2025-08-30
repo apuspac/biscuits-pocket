@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://1kcnchewseri"]
+
+[ext_resource type="Script" uid="uid://dp0jxhc3kd726" path="res://ui/biscuits_num_label.gd" id="1_8kchr"]
+[ext_resource type="FontFile" uid="uid://dlpcclpfmmp34" path="res://ui/Stitch Party.ttf" id="1_sp5j7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_252ol"]
+font = ExtResource("1_sp5j7")
+font_size = 64
+
+[node name="BiscuitsNumLabel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_8kchr")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00803, 1)
+text = "12345"
+label_settings = SubResource("LabelSettings_252ol")
+horizontal_alignment = 1
+vertical_alignment = 1

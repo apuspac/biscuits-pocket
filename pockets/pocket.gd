@@ -5,7 +5,7 @@ signal pocket_choice_end
 
 @onready var _pockets_area = $Area2D
 @onready var _arrow_ui = $ArrowUI
-@onready var _label = $BiscuitsLabel
+@onready var _label = $BiscuitsNumLabel
 @onready var _pocket_sprite = $PocketSprite
 @onready var _biscuits = $Biscuits
 
@@ -78,11 +78,16 @@ func _pocket_pat() -> void:
     await _pocket_sprite.pat_play()
 
     if biscuits_array.size() > biscuits_limit:
-        # TODO pockets break anim
-        await _pocket_sprite.burst_play()
 
-        _label.text = str(biscuits_array.size())
+        await _pocket_sprite.burst_play(biscuits_array)
+
+        _label.update_count(biscuits_array.size())
         _label.visible = true
+
+        await get_tree().create_timer(2.0).timeout
+
+        _label.queue_free_effect()
+        await queue_free_effect()
         queue_free()
 
 
@@ -91,20 +96,22 @@ func _pocket_pickup() -> void:
     _biscuits.init_biscuits(biscuits_array)
     await _pocket_sprite.pickup_play()
 
-    var tween = _biscuits.pickup_biscuits()
-    await tween.finished
+    await _biscuits.pickup_biscuits().finished
 
-    #TODO: collect biscuit anim
-    _label.text = str(biscuits_array.size())
+    _label.update_count(biscuits_array.size())
     _label.visible = true
 
     # ビスケットを集計 -> mainに
     ## NOTE:カード効果をつけるなら globalで一気に集計させる。
+
+   #####
     PocketEvent.emit_send_biscuits(biscuits_array.size())
+    await _biscuits.tally_move_biscuits().finished
+
 
     await get_tree().create_timer(1.0).timeout
 
-
+    _label.queue_free_effect()
     await queue_free_effect()
     queue_free()
 

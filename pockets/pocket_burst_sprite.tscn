@@ -18,7 +18,7 @@ visible = false
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 build_mode = 1
-polygon = PackedVector2Array(-221, -170, -219, -79, -193, 136, -141, 197, -26, 219, -26, 188, -169, 124, -194, -176)
+polygon = PackedVector2Array(-221, -170, -219, -79, -193, 136, -109, 252, -21, 263, -73, 232, -169, 124, -194, -176)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 build_mode = 1

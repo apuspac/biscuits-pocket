@@ -1,0 +1,104 @@
+[gd_scene load_steps=8 format=3 uid="uid://df55oyavht3cm"]
+
+[ext_resource type="Texture2D" uid="uid://b3nccjjbit7u6" path="res://biscuits/img/biscuit_flour_1.png" id="1_srjg8"]
+[ext_resource type="Texture2D" uid="uid://yyvba55t2go8" path="res://assets/img/biscuit_flour_1_chocolate.png" id="2_d5bpe"]
+[ext_resource type="Texture2D" uid="uid://ce2eccv27bfmk" path="res://assets/img/biscuit_square_1.png" id="3_ootym"]
+[ext_resource type="Texture2D" uid="uid://cakiqoc14gnt1" path="res://assets/img/biscuit_square_1_chocolate.png" id="4_x4xeu"]
+[ext_resource type="Texture2D" uid="uid://e3t15bvsoeeu" path="res://assets/img/biscuit_square_2.png" id="5_rchuf"]
+[ext_resource type="Texture2D" uid="uid://cfn0lxyc7ijof" path="res://assets/img/biscuit_square_2_chocolate.png" id="6_e2w7w"]
+
+[sub_resource type="Gradient" id="Gradient_lsklx"]
+offsets = PackedFloat32Array(0.833333, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="BiscuitsParticle" type="Node2D"]
+
+[node name="Particle1" type="CPUParticles2D" parent="."]
+amount = 15
+texture = ExtResource("1_srjg8")
+lifetime = 5.0
+emission_shape = 3
+emission_rect_extents = Vector2(640, 300)
+direction = Vector2(0, 1)
+spread = 30.0
+gravity = Vector2(0, 40)
+initial_velocity_min = 200.0
+initial_velocity_max = 500.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_lsklx")
+
+[node name="Particle2" type="CPUParticles2D" parent="."]
+amount = 15
+texture = ExtResource("2_d5bpe")
+lifetime = 5.0
+emission_shape = 3
+emission_rect_extents = Vector2(640, 300)
+direction = Vector2(0, 1)
+spread = 30.0
+gravity = Vector2(0, 40)
+initial_velocity_min = 200.0
+initial_velocity_max = 500.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_lsklx")
+
+[node name="Particle3" type="CPUParticles2D" parent="."]
+amount = 15
+texture = ExtResource("3_ootym")
+lifetime = 5.0
+emission_shape = 3
+emission_rect_extents = Vector2(640, 300)
+direction = Vector2(0, 1)
+spread = 30.0
+gravity = Vector2(0, 40)
+initial_velocity_min = 200.0
+initial_velocity_max = 500.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_lsklx")
+
+[node name="Particle4" type="CPUParticles2D" parent="."]
+amount = 15
+texture = ExtResource("4_x4xeu")
+lifetime = 5.0
+emission_shape = 3
+emission_rect_extents = Vector2(640, 300)
+direction = Vector2(0, 1)
+spread = 30.0
+gravity = Vector2(0, 40)
+initial_velocity_min = 200.0
+initial_velocity_max = 500.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_lsklx")
+
+[node name="Particle5" type="CPUParticles2D" parent="."]
+amount = 15
+texture = ExtResource("5_rchuf")
+lifetime = 5.0
+emission_shape = 3
+emission_rect_extents = Vector2(640, 300)
+direction = Vector2(0, 1)
+spread = 30.0
+gravity = Vector2(0, 40)
+initial_velocity_min = 200.0
+initial_velocity_max = 500.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_lsklx")
+
+[node name="Particle6" type="CPUParticles2D" parent="."]
+amount = 15
+texture = ExtResource("6_e2w7w")
+lifetime = 5.0
+emission_shape = 3
+emission_rect_extents = Vector2(640, 300)
+direction = Vector2(0, 1)
+spread = 30.0
+gravity = Vector2(0, 40)
+initial_velocity_min = 200.0
+initial_velocity_max = 500.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_lsklx")

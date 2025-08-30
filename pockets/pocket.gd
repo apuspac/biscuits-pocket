@@ -42,7 +42,7 @@ func _pocket_choice_start() -> void:
     switch_choice_ui(true)
 
 func _pocket_choice_end() -> void:
-    is_choice_enable = true
+    is_choice_enable = false
     switch_choice_ui(false)
     pocket_choice_end.emit()
 
@@ -72,7 +72,7 @@ func act() -> void:
 
 
 func _pocket_pat() -> void:
-    for i in randi_range(1, 4):
+    for i in randi_range(3, 6):
         _add_biscuit()
 
     await _pocket_sprite.pat_play()

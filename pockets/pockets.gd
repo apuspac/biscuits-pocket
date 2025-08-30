@@ -65,9 +65,12 @@ func _tally_choices():
 
 # pat pickupの処理実行
 func exe_pocket_action():
-    # awaitの付け方これでいい?
+
+    # 集めるときは
     await loop_pocket_action()
 
+    # TODO: ここで加算処理を行なうつもりなので、
+    # pickupの回収処理を別処理にする。
     get_parent().biscuits_tally()
 
 func loop_pocket_action():

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bu0wtq54sklt5"]
+[gd_scene load_steps=5 format=3 uid="uid://bu0wtq54sklt5"]
 
 [ext_resource type="FontFile" uid="uid://dlpcclpfmmp34" path="res://ui/Stitch Party.ttf" id="1_5fqab"]
 [ext_resource type="Script" uid="uid://dpuqr5raw2xml" path="res://ui/phase_label.gd" id="1_uuui7"]
+[ext_resource type="AudioStream" uid="uid://dnvjjmamhkmr3" path="res://assets/se/cursor-kati.wav" id="3_xj4rw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uuui7"]
 font = ExtResource("1_5fqab")
@@ -27,3 +28,6 @@ text = "place"
 label_settings = SubResource("LabelSettings_uuui7")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Kati" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xj4rw")

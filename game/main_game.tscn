@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1qewhdu2k5dn"]
+[gd_scene load_steps=12 format=3 uid="uid://b1qewhdu2k5dn"]
 
 [ext_resource type="Script" uid="uid://be46hbuuajtgq" path="res://game/main_game.gd" id="1_7of5j"]
 [ext_resource type="Texture2D" uid="uid://c0pfa4begvxqq" path="res://assets/img/apron.png" id="2_6o72v"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bu0wtq54sklt5" path="res://ui/phase_label.tscn" id="5_433cb"]
 [ext_resource type="PackedScene" uid="uid://dmvqj0p4enw5a" path="res://ui/main_camera_2d.tscn" id="5_pdiy6"]
 [ext_resource type="Script" uid="uid://b71hiuu6psphg" path="res://ui/main_camera_2d.gd" id="6_ult0l"]
+[ext_resource type="PackedScene" uid="uid://bfu4oqsplinew" path="res://ui/game_over_cover.tscn" id="10_ult0l"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t4f2l"]
 font = ExtResource("3_g4axw")
@@ -45,7 +46,7 @@ script = ExtResource("2_g4axw")
 [node name="MainCamera2D" parent="." instance=ExtResource("5_pdiy6")]
 position = Vector2(640, 360)
 limit_left = 0
-limit_top = -248
+limit_top = -750
 limit_right = 1280
 limit_bottom = 1200
 limit_smoothed = true
@@ -69,3 +70,9 @@ offset_left = 640.0
 offset_top = 88.0
 offset_right = 640.0
 offset_bottom = 88.0
+
+[node name="GameOverCover" parent="." instance=ExtResource("10_ult0l")]
+offset_left = 640.0
+offset_top = 272.0
+offset_right = 640.0
+offset_bottom = 272.0

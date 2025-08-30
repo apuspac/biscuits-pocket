@@ -1,18 +1,77 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxibvxo2ubbb0"]
+[gd_scene load_steps=8 format=3 uid="uid://dxibvxo2ubbb0"]
 
-[ext_resource type="PackedScene" uid="uid://6vc1fehb7qgy" path="res://ui/biscuits_count.tscn" id="1_jvnui"]
 [ext_resource type="Script" uid="uid://dqm67aap76vkw" path="res://game/end.gd" id="1_uqgph"]
+[ext_resource type="FontFile" uid="uid://dlpcclpfmmp34" path="res://ui/Stitch Party.ttf" id="2_uqgph"]
+[ext_resource type="AudioStream" uid="uid://bpnoh0tey6cec" path="res://assets/se/Clap052.wav" id="3_k6b7i"]
+[ext_resource type="PackedScene" uid="uid://df55oyavht3cm" path="res://ui/biscuits_particle_endscene.tscn" id="4_6f1ew"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uqgph"]
+bg_color = Color(1, 1, 1, 0.890196)
+border_color = Color(1, 0.743964, 0.446328, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 50.0
+expand_margin_top = 50.0
+expand_margin_right = 80.0
+expand_margin_bottom = 50.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_uqgph"]
+font = ExtResource("2_uqgph")
+font_size = 54
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_k6b7i"]
+font = ExtResource("2_uqgph")
+font_size = 54
+font_color = Color(0.823529, 0.466667, 0, 1)
 
 [node name="End" type="Node2D"]
 script = ExtResource("1_uqgph")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+z_index = -5
 offset_right = 1280.0
 offset_bottom = 720.0
-color = Color(0.458405, 0.458405, 0.458405, 1)
+color = Color(0, 0.529412, 0.639216, 1)
 
-[node name="BiscuitsCount" parent="." instance=ExtResource("1_jvnui")]
-offset_left = 248.0
-offset_top = 256.0
-offset_right = 248.0
-offset_bottom = 256.0
+[node name="TitleButton" type="Button" parent="."]
+offset_left = 1088.0
+offset_top = 600.0
+offset_right = 1237.0
+offset_bottom = 684.0
+theme_override_fonts/font = ExtResource("2_uqgph")
+theme_override_font_sizes/font_size = 60
+text = "Tittle"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 176.0
+offset_top = 176.0
+offset_right = 388.0
+offset_bottom = 318.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_uqgph")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Result" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Result"
+label_settings = SubResource("LabelSettings_uqgph")
+
+[node name="BiscuitsCount" type="Label" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(270, 0)
+layout_mode = 2
+text = "biscuits "
+label_settings = SubResource("LabelSettings_k6b7i")
+
+[node name="Clap" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_k6b7i")
+
+[node name="BiscuitParticle" parent="." instance=ExtResource("4_6f1ew")]
+visible = false
+z_index = -2
+position = Vector2(640, 8)

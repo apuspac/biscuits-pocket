@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxpmmjvj2cx85"]
+
+[ext_resource type="Script" uid="uid://dd5tu28jt2s5n" path="res://global/audio_player.gd" id="1_oiyjj"]
+[ext_resource type="AudioStream" uid="uid://cr2fccbuml34j" path="res://assets/bgm/CookieMinimal-Lead BPM90.0 2025-08-29 00.48.57.wav" id="2_knfyo"]
+[ext_resource type="AudioStream" uid="uid://y0konj4ccamm" path="res://assets/bgm/CookieMinimal-drum BPM90.0 2025-08-29 00.46.44.wav" id="3_f24de"]
+
+[node name="AudioPlayer" type="Node"]
+script = ExtResource("1_oiyjj")
+
+[node name="Lead" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_knfyo")
+autoplay = true
+bus = &"BGM"
+
+[node name="Drum" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_f24de")
+volume_db = -20.0
+bus = &"BGM"

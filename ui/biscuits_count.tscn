@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://6vc1fehb7qgy"]
+[gd_scene load_steps=7 format=3 uid="uid://6vc1fehb7qgy"]
 
 [ext_resource type="Script" uid="uid://gp8nltm8tje3" path="res://ui/biscuits_count.gd" id="1_bv2tb"]
 [ext_resource type="FontFile" uid="uid://dlpcclpfmmp34" path="res://ui/Stitch Party.ttf" id="2_mbjsq"]
 [ext_resource type="Texture2D" uid="uid://b3nccjjbit7u6" path="res://biscuits/img/biscuit_flour_1.png" id="3_mbjsq"]
+[ext_resource type="AudioStream" uid="uid://ciap22ai21aio" path="res://assets/se/cursor-popopo.wav" id="4_e0leq"]
+[ext_resource type="AudioStream" uid="uid://da3fyos0hlj0y" path="res://assets/se/cursor-po.wav" id="5_x11w1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e0leq"]
 font = ExtResource("2_mbjsq")
@@ -39,3 +41,11 @@ offset_right = 472.0
 offset_bottom = 552.0
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("3_mbjsq")
+
+[node name="SE_Popopo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_e0leq")
+volume_db = -10.0
+bus = &"SE"
+
+[node name="SE_Po" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_x11w1")

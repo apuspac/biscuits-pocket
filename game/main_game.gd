@@ -32,6 +32,11 @@ var end_scene_path := "res://game/end.tscn"
 @onready var phase_label = $PhaseLabelDebug
 @onready var _biscuits_label = $BiscuitsCount
 @onready var _phase_label = $PhaseLabel
+@onready var _main_camera = $MainCamera2D
+@onready var _gameover_cover = $GameOverCover
+
+
+
 
 func _ready():
     # data_
@@ -40,7 +45,10 @@ func _ready():
     PocketEvent.pocket_action_ready.connect(_resolve_start)
     PocketEvent.send_biscuits.connect(add_biscuits)
 
+    await _main_camera.first_transition().finished
+
     _set_state(States.SETUP)
+
 
 func _set_state(next_state: States) -> void:
     # print_debug(state, " -> ", next_state)
@@ -74,6 +82,9 @@ func _setup() -> void:
     # add pockets
     await pockets_node.pocket_instantiate()
 
+    if phase_count == 5:
+        AudioPlayer.add_drum(3.0)
+
     _set_state(States.CHOICE)
 
 
@@ -99,8 +110,6 @@ func biscuits_tally():
     # TODO: biscuits num update anim?
     await get_tree().create_timer(2.0).timeout
 
-
-
     _set_state(States.CARD)
 
 
@@ -111,8 +120,9 @@ func _choice_card():
     # is game end?
     if phase_count >= _end_phase_num:
         phase_label.text = "END"
-        print_debug("owari~~")
+
         # scene_ change
+        await _gameover_cover.game_over_transition(_main_camera.global_position).finished
 
         PocketEvent.result_biscuits_num = biscuits_num
         get_tree().change_scene_to_file(end_scene_path)

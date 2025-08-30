@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cr2fccbuml34j"
+path="res://.godot/imported/CookieMinimal-Lead BPM90.0 2025-08-29 00.48.57.wav-3559f2cffd7b6a91219c06d5f2c754f7.sample"
+
+[deps]
+
+source_file="res://assets/bgm/CookieMinimal-Lead BPM90.0 2025-08-29 00.48.57.wav"
+dest_files=["res://.godot/imported/CookieMinimal-Lead BPM90.0 2025-08-29 00.48.57.wav-3559f2cffd7b6a91219c06d5f2c754f7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

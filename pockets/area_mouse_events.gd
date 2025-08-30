@@ -8,6 +8,7 @@ var _is_mouse_over: bool = false
 
 func _ready():
     mouse_entered.connect(_mouse_over)
+    mouse_entered.connect(_play_enterd_se)
     mouse_exited.connect(_mouse_over)
 
 func _input_event(_viewport, event, _shape_idx):
@@ -22,3 +23,9 @@ func _input_event(_viewport, event, _shape_idx):
 func _mouse_over():
     _is_mouse_over = not _is_mouse_over
     area_mouse_overed.emit(_is_mouse_over)
+
+
+
+
+func _play_enterd_se():
+    AudioPlayer.play_SE("po")

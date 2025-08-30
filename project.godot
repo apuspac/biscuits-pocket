@@ -8,6 +8,10 @@
 
 config_version=5
 
+[animation]
+
+warnings/check_invalid_track_paths=false
+
 [application]
 
 config/name="biscuits-pocket"
@@ -24,6 +28,7 @@ video/size/viewport_width=1280
 [autoload]
 
 PocketEvent="*res://global/pocket_event.gd"
+AudioPlayer="*res://global/audio_player.tscn"
 
 [display]
 

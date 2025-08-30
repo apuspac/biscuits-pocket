@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dg6ccpe4lcumf"]
+[gd_scene load_steps=9 format=3 uid="uid://dg6ccpe4lcumf"]
 
 [ext_resource type="Texture2D" uid="uid://bjn2mvttbwlbc" path="res://pockets/img/pokke.png" id="1_kt2of"]
 [ext_resource type="Texture2D" uid="uid://4tjf3u6qc0p5" path="res://pockets/img/hand_1.png" id="2_auae8"]
+[ext_resource type="AudioStream" uid="uid://bl0lpgndbmkpb" path="res://assets/se/Perc372.wav" id="3_auae8"]
+[ext_resource type="AudioStream" uid="uid://celw0uhvhvfx6" path="res://assets/se/SHAKER.wav" id="4_jyxpk"]
 
 [sub_resource type="Animation" id="Animation_7ovic"]
 length = 0.001
@@ -65,6 +67,30 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../PatSE:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../ShakeSE:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_xs32w"]
 resource_name = "pat"
@@ -104,6 +130,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../PatSE:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.366667, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
 
 [sub_resource type="Animation" id="Animation_pxw4i"]
 resource_name = "pickup"
@@ -131,6 +169,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ShakeSE:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pxw4i"]
@@ -163,3 +213,12 @@ root_node = NodePath("../NormalSprite")
 libraries = {
 &"": SubResource("AnimationLibrary_pxw4i")
 }
+
+[node name="PatSE" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_auae8")
+volume_db = -10.759
+bus = &"SE"
+
+[node name="ShakeSE" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_jyxpk")
+volume_db = -17.931

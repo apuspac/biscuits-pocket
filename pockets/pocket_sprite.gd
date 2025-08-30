@@ -56,6 +56,7 @@ func burst_play(biscuits_array: Array[int]):
 
     _normal.visible = false
     _burst.visible = true
+    AudioPlayer.play_SE("burst", -20.0)
 
     for biscuits_type in biscuits_array:
         var biscuits_rigid = biscuits_rigidbody.instantiate()

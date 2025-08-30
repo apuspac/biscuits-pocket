@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://y0konj4ccamm"
+path="res://.godot/imported/CookieMinimal-drum BPM90.0 2025-08-29 00.46.44.wav-d36f76b4dcfcb2ac816e534bd7e554be.sample"
+
+[deps]
+
+source_file="res://assets/bgm/CookieMinimal-drum BPM90.0 2025-08-29 00.46.44.wav"
+dest_files=["res://.godot/imported/CookieMinimal-drum BPM90.0 2025-08-29 00.46.44.wav-d36f76b4dcfcb2ac816e534bd7e554be.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

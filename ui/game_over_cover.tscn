@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://bfu4oqsplinew"]
+
+[ext_resource type="Script" uid="uid://blxm413pjdqum" path="res://ui/game_over_cover.gd" id="1_ealvj"]
+[ext_resource type="FontFile" uid="uid://dlpcclpfmmp34" path="res://ui/Stitch Party.ttf" id="1_r3h6y"]
+[ext_resource type="Texture2D" uid="uid://cl8k6cbnbsunn" path="res://assets/img/biscuit_flour_1.png" id="2_ealvj"]
+[ext_resource type="Texture2D" uid="uid://yyvba55t2go8" path="res://assets/img/biscuit_flour_1_chocolate.png" id="3_8jiro"]
+[ext_resource type="Texture2D" uid="uid://e3t15bvsoeeu" path="res://assets/img/biscuit_square_2.png" id="4_p7nak"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5eixk"]
+font = ExtResource("1_r3h6y")
+font_size = 32
+font_color = Color(0.823529, 0.466667, 0, 1)
+
+[node name="GameOverCover" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ealvj")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over!!"
+label_settings = SubResource("LabelSettings_5eixk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+clip_children = 2
+z_index = -1
+layout_mode = 0
+offset_left = -640.0
+offset_top = -44.0
+offset_right = 640.0
+offset_bottom = 44.0
+pivot_offset = Vector2(640, 44)
+color = Color(1, 0.854902, 0.741176, 0.729412)
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect"]
+position = Vector2(96, 80)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_ealvj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ColorRect"]
+position = Vector2(336, 0)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_8jiro")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ColorRect"]
+position = Vector2(872, 64)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_ealvj")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ColorRect"]
+position = Vector2(1136, 16)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_8jiro")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ColorRect"]
+position = Vector2(448, 104)
+rotation = 0.393874
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_p7nak")

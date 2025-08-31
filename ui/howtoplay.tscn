@@ -1,0 +1,88 @@
+[gd_scene load_steps=10 format=3 uid="uid://c7unlcj6emk5x"]
+
+[ext_resource type="Script" uid="uid://77l04anbo3y8" path="res://ui/howtoplay.gd" id="1_0sw27"]
+[ext_resource type="FontFile" uid="uid://dlpcclpfmmp34" path="res://ui/Stitch Party.ttf" id="2_2ixs3"]
+[ext_resource type="Texture2D" uid="uid://bjn2mvttbwlbc" path="res://pockets/img/pokke.png" id="3_yrw4f"]
+[ext_resource type="Texture2D" uid="uid://db0desd3umhc0" path="res://pockets/img/arror.png" id="4_lyeje"]
+[ext_resource type="Texture2D" uid="uid://c1j07nb8mq0t4" path="res://assets/img/card_base.png" id="5_snjir"]
+[ext_resource type="Texture2D" uid="uid://dp7x3oxtgkwdi" path="res://assets/img/card_biscuit.png" id="6_6u7ff"]
+[ext_resource type="Texture2D" uid="uid://ksauauk4v5jh" path="res://pockets/img/pokke_yabure_ue.png" id="7_lyeje"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sliwq"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.6, 0.6, 0.6, 0.945098)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+expand_margin_bottom = 75.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_snjir"]
+
+[node name="HowToPlay" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_0sw27")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 40.0
+offset_right = 1248.0
+offset_bottom = 600.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sliwq")
+
+[node name="Label" type="Label" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/line_spacing = -10
+theme_override_fonts/font = ExtResource("2_2ixs3")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_snjir")
+text = "Tap the pocket           -> Get biscuits
+
+Click arrow         -> Take out biscuits
+
+Click a card           -> Activate effect
+
+Too Many Biscuits                 -> Boom!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Close" type="Button" parent="."]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 568.0
+offset_right = 695.0
+offset_bottom = 652.0
+theme_override_fonts/font = ExtResource("2_2ixs3")
+theme_override_font_sizes/font_size = 60
+text = "close"
+
+[node name="Pokke" type="Sprite2D" parent="."]
+position = Vector2(656, 120)
+scale = Vector2(0.203125, 0.203125)
+texture = ExtResource("3_yrw4f")
+
+[node name="Arror" type="Sprite2D" parent="."]
+position = Vector2(560, 264)
+scale = Vector2(0.653846, 0.653846)
+texture = ExtResource("4_lyeje")
+
+[node name="CardBase" type="Sprite2D" parent="."]
+position = Vector2(572, 404)
+scale = Vector2(0.234375, 0.234375)
+texture = ExtResource("5_snjir")
+
+[node name="CardBiscuit" type="Sprite2D" parent="."]
+position = Vector2(572, 412)
+scale = Vector2(0.171875, 0.171875)
+texture = ExtResource("6_6u7ff")
+
+[node name="PokkeYabureUe" type="Sprite2D" parent="."]
+position = Vector2(792, 528)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_lyeje")

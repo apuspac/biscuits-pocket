@@ -23,16 +23,16 @@ var card_type_id: int = 0
 var _is_selected: bool = false
 
 var card_label := [
-        "Pocket +2x",
+        "Pocket +2",
         "+5 Biscuits \n when collected",
         "Pat Bonus \n Max +10",
-        "50%: +30 \n 50%: -30",
-        "Pocket Size \n 10 → 30",
+        "50% +30 \n 50%: -30",
+        "Pocket Size \n +20",
         "+10 Phases",
         "Random +1~20 \n Each Time",
         "+3 per phase",
         "Init biscuits \n +5",
-        "Success: ×2 \n Fail: 0 This phase",
+        "Success: x2 \n Fail: 0 This phase",
         "75%: +10 \n 25%: -5",
     ]
 

@@ -18,7 +18,7 @@ func _init_card():
         var card = card_scene.instantiate()
         cards_node.add_child(card)
         card.position = Vector2(320 * i, 328) + Vector2(-640, -328.0)
-        card.change_sprite(randi_range(0, 5))
+        card.change_sprite(randi_range(0, 10))
 
 func _in_transition():
     var target_pos = self.position

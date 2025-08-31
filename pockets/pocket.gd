@@ -14,7 +14,7 @@ signal pocket_choice_end
 
 
 var biscuits_array :Array[int]
-var biscuits_limit: int = 15
+var biscuits_limit: int = 12
 
 enum ACT {PICKUP, PAT}
 var next_operation: ACT = ACT.PAT

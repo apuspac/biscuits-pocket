@@ -62,11 +62,11 @@ visible = false
 script = ExtResource("2_g4axw")
 
 [node name="MainCamera2D" parent="." instance=ExtResource("5_pdiy6")]
-position = Vector2(640, 360)
+position = Vector2(640, 372)
 limit_left = 0
 limit_top = -750
 limit_right = 1280
-limit_bottom = 1200
+limit_bottom = 2200
 limit_smoothed = true
 script = ExtResource("6_ult0l")
 

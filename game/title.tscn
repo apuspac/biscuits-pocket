@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://br4i5um5gllc2"]
+[gd_scene load_steps=15 format=3 uid="uid://br4i5um5gllc2"]
 
 [ext_resource type="Script" uid="uid://bn7whix1h3for" path="res://game/title.gd" id="1_gkyaf"]
 [ext_resource type="FontFile" uid="uid://dlpcclpfmmp34" path="res://ui/Stitch Party.ttf" id="1_t0532"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cfn0lxyc7ijof" path="res://assets/img/biscuit_square_2_chocolate.png" id="7_jfllh"]
 [ext_resource type="Texture2D" uid="uid://yyvba55t2go8" path="res://assets/img/biscuit_flour_1_chocolate.png" id="8_j6dv4"]
 [ext_resource type="Texture2D" uid="uid://dq1kojsggom4a" path="res://assets/img/hand_1.png" id="11_wrxdc"]
+[ext_resource type="PackedScene" uid="uid://c7unlcj6emk5x" path="res://ui/howtoplay.tscn" id="12_g4ubk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvkn1"]
 content_margin_left = 20.0
@@ -36,13 +37,22 @@ offset_bottom = 720.0
 color = Color(0, 0.529412, 0.639216, 1)
 
 [node name="Start" type="Button" parent="."]
-offset_left = 1000.0
-offset_top = 592.0
-offset_right = 1155.0
-offset_bottom = 676.0
+offset_left = 1072.0
+offset_top = 600.0
+offset_right = 1227.0
+offset_bottom = 684.0
 theme_override_fonts/font = ExtResource("1_t0532")
 theme_override_font_sizes/font_size = 60
 text = "Start"
+
+[node name="HowToPlay" type="Button" parent="."]
+offset_left = 720.0
+offset_top = 600.0
+offset_right = 1035.0
+offset_bottom = 684.0
+theme_override_fonts/font = ExtResource("1_t0532")
+theme_override_font_sizes/font_size = 60
+text = "HowToPLay"
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 visible = false
@@ -53,6 +63,7 @@ offset_bottom = 293.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tvkn1")
 
 [node name="Biscuits" type="Node2D" parent="."]
+position = Vector2(-112, -56)
 
 [node name="CardBiscuit" type="Sprite2D" parent="Biscuits"]
 position = Vector2(464, 216)
@@ -145,3 +156,6 @@ position = Vector2(400, 608)
 rotation = 2.16235
 scale = Vector2(0.480569, 0.480569)
 texture = ExtResource("11_wrxdc")
+
+[node name="HowToPlayScreen" parent="." instance=ExtResource("12_g4ubk")]
+visible = false

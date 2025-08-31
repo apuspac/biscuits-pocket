@@ -19,12 +19,12 @@ func _ready():
 
     var particle_amount
 
-    if _biscuits_num > 75:
+    if (_biscuits_num / 5) > 75:
         particle_amount = 75
     if _biscuits_num <= 0:
         particle_amount = 1
     else:
-        particle_amount = _biscuits_num
+        particle_amount = _biscuits_num / 5
 
     _particle.change_amount(particle_amount)
 

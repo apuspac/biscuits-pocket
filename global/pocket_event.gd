@@ -18,6 +18,15 @@ var result_biscuits_num :int :
         result_biscuits_num = value
 
 
+func init_game():
+    additional_pat =0
+    additional_capacity = 0
+    additional_phase = 0
+    init_biscuits = 0
+    result_biscuits_num = 0
+
+
+
 func emit_pocket_choice_enabled():
     pocket_choice_enabled.emit()
 

@@ -15,7 +15,7 @@ warnings/check_invalid_track_paths=false
 [application]
 
 config/name="biscuits-pocket"
-run/main_scene="uid://b1qewhdu2k5dn"
+run/main_scene="uid://br4i5um5gllc2"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

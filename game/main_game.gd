@@ -47,6 +47,7 @@ var additional_pockets :int = 0
 var _first_phase_for7 :int = 0
 
 func _ready():
+    PocketEvent.init_game()
     # data_
     phase_count = 0
 
@@ -57,6 +58,7 @@ func _ready():
     await _main_camera.first_transition().finished
 
     _set_state(States.SETUP)
+
 
 
 func _set_state(next_state: States) -> void:
@@ -194,6 +196,7 @@ func apply_effect_permanently(card_type: int):
             PocketEvent.additional_capacity += 20
         5: # phase数 + 10
             PocketEvent.additional_phase += 10
+            _end_phase_num = 20 + PocketEvent.additional_phase
         6: # 毎回 1~20加算
             card_effect_array.append(6)
         7:  # phase数ごとに +3

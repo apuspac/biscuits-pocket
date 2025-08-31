@@ -12,7 +12,9 @@ var _init_pos: Vector2 = Vector2(200, 600)
 var _pockets_cols = 4
 
 var _choice_end_pockets: int = 0
-
+var _act_end_pockets: int =0
+var _tally_end_pockets: int =0
+var _max_pockets: int
 
 func _ready():
     PocketEvent.pocket_choice_enabled.connect(_prepare_tally)
@@ -54,6 +56,9 @@ func pocket_instantiate():
 
 func _prepare_tally():
     _choice_end_pockets = 0
+    _act_end_pockets = 0
+    _tally_end_pockets = 0
+    _max_pockets = get_child_count()
 
 func _tally_choices():
     _choice_end_pockets += 1
@@ -65,17 +70,30 @@ func _tally_choices():
 
 # pat pickupの処理実行
 func exe_pocket_action():
-
-    # 集めるときは
-    await loop_pocket_action()
-
-    # TODO: ここで加算処理を行なうつもりなので、
-    # pickupの回収処理を別処理にする。
-    get_parent().biscuits_tally()
-
-func loop_pocket_action():
     for pocket in get_children():
         pocket.act()
+
+func act_task_complete():
+    _act_end_pockets += 1
+
+    if _act_end_pockets >= get_child_count():
+        get_parent().biscuits_tally()
+
+
+
+
+# piakip後の回収実行
+func exe_tally_act():
+    for pocket in get_children():
+        pocket.tally_act()
+
+func tally_task_complete():
+    _tally_end_pockets += 1
+
+    # print_debug(_tally_end_pockets, " ", get_child_count())
+
+    if _tally_end_pockets >= get_child_count():
+        get_parent().tally_to_card()
 
 
 

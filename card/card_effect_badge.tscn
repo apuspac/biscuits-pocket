@@ -1,0 +1,116 @@
+[gd_scene load_steps=18 format=3 uid="uid://bnh8grrdkc1gq"]
+
+[ext_resource type="Script" uid="uid://ctptqbqs5oqx6" path="res://card/card_effect_badge.gd" id="1_8ygcn"]
+[ext_resource type="Texture2D" uid="uid://c1j07nb8mq0t4" path="res://assets/img/card_base.png" id="1_t2wa4"]
+[ext_resource type="Texture2D" uid="uid://bg3r6mkvycje3" path="res://assets/img/card_pokke.png" id="2_cigmu"]
+[ext_resource type="Texture2D" uid="uid://dp7x3oxtgkwdi" path="res://assets/img/card_biscuit.png" id="3_lhxlm"]
+[ext_resource type="Texture2D" uid="uid://b2msepvwhmcac" path="res://assets/img/card_hand.png" id="4_8ygcn"]
+[ext_resource type="Texture2D" uid="uid://yyvba55t2go8" path="res://assets/img/biscuit_flour_1_chocolate.png" id="5_lj4bo"]
+[ext_resource type="Texture2D" uid="uid://clb6u1mvwob2c" path="res://assets/img/pokke.png" id="6_lhxlm"]
+[ext_resource type="Texture2D" uid="uid://c0pfa4begvxqq" path="res://assets/img/apron.png" id="7_8ygcn"]
+[ext_resource type="Script" uid="uid://tdpxh34ngkc3" path="res://pockets/area_mouse_events.gd" id="9_lj4bo"]
+[ext_resource type="Texture2D" uid="uid://cl8k6cbnbsunn" path="res://assets/img/biscuit_flour_1.png" id="9_y2jf6"]
+[ext_resource type="Texture2D" uid="uid://ce2eccv27bfmk" path="res://assets/img/biscuit_square_1.png" id="10_ebn15"]
+[ext_resource type="FontFile" uid="uid://dlpcclpfmmp34" path="res://ui/Stitch Party.ttf" id="10_tjg2o"]
+[ext_resource type="Texture2D" uid="uid://cakiqoc14gnt1" path="res://assets/img/biscuit_square_1_chocolate.png" id="11_vrmia"]
+[ext_resource type="Texture2D" uid="uid://e3t15bvsoeeu" path="res://assets/img/biscuit_square_2.png" id="12_nk353"]
+[ext_resource type="Texture2D" uid="uid://cfn0lxyc7ijof" path="res://assets/img/biscuit_square_2_chocolate.png" id="13_u3k7g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ygcn"]
+size = Vector2(80, 96)
+
+[sub_resource type="LabelSettings" id="LabelSettings_il20a"]
+font = ExtResource("10_tjg2o")
+font_size = 20
+
+[node name="CardEffectBadge" type="Node2D"]
+script = ExtResource("1_8ygcn")
+
+[node name="Base" type="Sprite2D" parent="."]
+scale = Vector2(0.26, 0.2)
+texture = ExtResource("1_t2wa4")
+
+[node name="Batch0" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+scale = Vector2(0.225, 0.225)
+texture = ExtResource("2_cigmu")
+
+[node name="Batch1" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(0, 8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_lhxlm")
+
+[node name="Batch2" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("4_8ygcn")
+
+[node name="Batch3" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+scale = Vector2(0.145, 0.145)
+texture = ExtResource("5_lj4bo")
+
+[node name="Batch4" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+scale = Vector2(0.145, 0.145)
+texture = ExtResource("6_lhxlm")
+
+[node name="Batch5" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+rotation = 0.174533
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("7_8ygcn")
+
+[node name="Batch6" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+scale = Vector2(0.145, 0.145)
+texture = ExtResource("9_y2jf6")
+
+[node name="Batch7" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+scale = Vector2(0.145, 0.145)
+texture = ExtResource("10_ebn15")
+
+[node name="Batch8" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+scale = Vector2(0.145, 0.145)
+texture = ExtResource("11_vrmia")
+
+[node name="Batch9" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+scale = Vector2(0.145, 0.145)
+texture = ExtResource("12_nk353")
+
+[node name="Batch10" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+scale = Vector2(0.145, 0.145)
+texture = ExtResource("13_u3k7g")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("9_lj4bo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_8ygcn")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -48.0
+offset_top = 48.0
+offset_right = 58.0
+offset_bottom = 74.0
+text = "asdfasdfas"
+label_settings = SubResource("LabelSettings_il20a")
+horizontal_alignment = 1
+vertical_alignment = 1

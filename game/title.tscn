@@ -1,11 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://br4i5um5gllc2"]
+[gd_scene load_steps=14 format=3 uid="uid://br4i5um5gllc2"]
 
 [ext_resource type="Script" uid="uid://bn7whix1h3for" path="res://game/title.gd" id="1_gkyaf"]
 [ext_resource type="FontFile" uid="uid://dlpcclpfmmp34" path="res://ui/Stitch Party.ttf" id="1_t0532"]
+[ext_resource type="Texture2D" uid="uid://cal8bnehhtxch" path="res://assets/img/pokke_yabure_shita.png" id="3_cjc1w"]
+[ext_resource type="Texture2D" uid="uid://dp7x3oxtgkwdi" path="res://assets/img/card_biscuit.png" id="3_lo2ck"]
+[ext_resource type="Texture2D" uid="uid://clb6u1mvwob2c" path="res://assets/img/pokke.png" id="4_0ery1"]
+[ext_resource type="Texture2D" uid="uid://cl8k6cbnbsunn" path="res://assets/img/biscuit_flour_1.png" id="4_g4ubk"]
+[ext_resource type="Texture2D" uid="uid://e3t15bvsoeeu" path="res://assets/img/biscuit_square_2.png" id="5_x87f2"]
+[ext_resource type="Texture2D" uid="uid://cakiqoc14gnt1" path="res://assets/img/biscuit_square_1_chocolate.png" id="6_ednae"]
+[ext_resource type="Texture2D" uid="uid://cfn0lxyc7ijof" path="res://assets/img/biscuit_square_2_chocolate.png" id="7_jfllh"]
+[ext_resource type="Texture2D" uid="uid://yyvba55t2go8" path="res://assets/img/biscuit_flour_1_chocolate.png" id="8_j6dv4"]
+[ext_resource type="Texture2D" uid="uid://dq1kojsggom4a" path="res://assets/img/hand_1.png" id="11_wrxdc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvkn1"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.903598, 0.903598, 0.903598, 1)
+corner_radius_top_left = 50
 
 [sub_resource type="LabelSettings" id="LabelSettings_gkyaf"]
 font = ExtResource("1_t0532")
-font_size = 80
+font_size = 65
+font_color = Color(0.823529, 0.466667, 0, 1)
 outline_size = 5
 outline_color = Color(0.749098, 0.349569, 0.127565, 1)
 
@@ -18,20 +36,112 @@ offset_bottom = 720.0
 color = Color(0, 0.529412, 0.639216, 1)
 
 [node name="Start" type="Button" parent="."]
-offset_left = 1064.0
+offset_left = 1000.0
 offset_top = 592.0
-offset_right = 1219.0
+offset_right = 1155.0
 offset_bottom = 676.0
 theme_override_fonts/font = ExtResource("1_t0532")
 theme_override_font_sizes/font_size = 60
 text = "Start"
 
-[node name="TitleLabel" type="Label" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
 visible = false
-offset_left = 80.0
-offset_top = 64.0
-offset_right = 507.0
-offset_bottom = 269.0
+offset_left = 712.0
+offset_top = 48.0
+offset_right = 1179.0
+offset_bottom = 293.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tvkn1")
+
+[node name="Biscuits" type="Node2D" parent="."]
+
+[node name="CardBiscuit" type="Sprite2D" parent="Biscuits"]
+position = Vector2(464, 216)
+rotation = 0.368577
+scale = Vector2(0.667056, 0.667056)
+texture = ExtResource("3_lo2ck")
+
+[node name="CardBiscuit2" type="Sprite2D" parent="Biscuits"]
+position = Vector2(744, 152)
+rotation = 0.368577
+scale = Vector2(0.22348, 0.22348)
+texture = ExtResource("4_g4ubk")
+
+[node name="CardBiscuit3" type="Sprite2D" parent="Biscuits"]
+position = Vector2(648, 296)
+rotation = 0.368577
+scale = Vector2(0.328243, 0.328243)
+texture = ExtResource("5_x87f2")
+
+[node name="CardBiscuit4" type="Sprite2D" parent="Biscuits"]
+position = Vector2(648, 296)
+rotation = 0.368577
+scale = Vector2(0.328243, 0.328243)
+texture = ExtResource("6_ednae")
+
+[node name="CardBiscuit5" type="Sprite2D" parent="Biscuits"]
+position = Vector2(792, 400)
+rotation = 0.368577
+scale = Vector2(0.328243, 0.328243)
+texture = ExtResource("5_x87f2")
+
+[node name="CardBiscuit6" type="Sprite2D" parent="Biscuits"]
+position = Vector2(888, 232)
+rotation = 0.368577
+scale = Vector2(0.328243, 0.328243)
+texture = ExtResource("5_x87f2")
+
+[node name="CardBiscuit6" type="Sprite2D" parent="Biscuits/CardBiscuit6"]
+position = Vector2(588.464, 373.636)
+rotation = 0.368577
+scale = Vector2(0.868306, 0.868306)
+texture = ExtResource("5_x87f2")
+
+[node name="BiscuitSquare2Chocolate" type="Sprite2D" parent="Biscuits/CardBiscuit6"]
+position = Vector2(1035.96, 44.0413)
+scale = Vector2(0.664133, 0.664133)
+texture = ExtResource("7_jfllh")
+
+[node name="BiscuitFlour1Chocolate" type="Sprite2D" parent="Biscuits/CardBiscuit6"]
+position = Vector2(425.233, 18.6512)
+scale = Vector2(0.667586, 0.667586)
+texture = ExtResource("8_j6dv4")
+
+[node name="CardBiscuit7" type="Sprite2D" parent="Biscuits"]
+position = Vector2(896, 552)
+rotation = 0.988134
+scale = Vector2(0.515054, 0.515054)
+texture = ExtResource("3_lo2ck")
+
+[node name="BiscuitFlour1" type="Sprite2D" parent="Biscuits"]
+position = Vector2(1160, 504)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_g4ubk")
+
+[node name="Titlelogo" type="Node2D" parent="."]
+position = Vector2(0, 80)
+
+[node name="PokkeYabureShita" type="Sprite2D" parent="Titlelogo"]
+position = Vector2(294.158, 334.158)
+rotation = 0.281686
+texture = ExtResource("3_cjc1w")
+
+[node name="Pokke" type="Sprite2D" parent="Titlelogo"]
+position = Vector2(286.158, 342.158)
+rotation = 0.281686
+texture = ExtResource("4_0ery1")
+
+[node name="TitleLabel" type="Label" parent="Titlelogo"]
+offset_left = 134.158
+offset_top = 270.158
+offset_right = 561.158
+offset_bottom = 475.158
+rotation = 0.0796753
 text = "Mysterious 
 Pockets"
 label_settings = SubResource("LabelSettings_gkyaf")
+
+[node name="Hand1" type="Sprite2D" parent="."]
+position = Vector2(400, 608)
+rotation = 2.16235
+scale = Vector2(0.480569, 0.480569)
+texture = ExtResource("11_wrxdc")

@@ -14,7 +14,7 @@ signal pocket_choice_end
 
 
 var biscuits_array :Array[int]
-var biscuits_limit: int = 10
+var biscuits_limit: int = 15
 
 enum ACT {PICKUP, PAT}
 var next_operation: ACT = ACT.PAT
@@ -35,6 +35,11 @@ func _ready():
     # init_data
     ## 初期で1個
     _add_biscuit()
+
+    # 追加
+    for i in range(PocketEvent.init_biscuits):
+        _add_biscuit()
+
     _pocket_sprite.scale = Vector2(0.0,0.0)
 
 func _pocket_choice_start() -> void:
@@ -62,22 +67,27 @@ func _choice_pickup() -> void:
         _pocket_choice_end()
 
 ## call pocket.gd
-func act() -> void:
+func act():
     match next_operation:
         ACT.PAT:
-            await _pocket_pat()
+            _pocket_pat()
         ACT.PICKUP:
             await _pocket_pickup()
 
+func tally_act() -> void:
+    if next_operation == ACT.PICKUP:
+        _tally_and_free()
+    else:
+        get_parent().tally_task_complete()
 
 
 func _pocket_pat() -> void:
-    for i in randi_range(3, 6):
+    for i in randi_range(3, 6 + PocketEvent.additional_pat):
         _add_biscuit()
 
     await _pocket_sprite.pat_play()
 
-    if biscuits_array.size() > biscuits_limit:
+    if biscuits_array.size() > (biscuits_limit + PocketEvent.additional_capacity):
 
         await _pocket_sprite.burst_play(biscuits_array)
 
@@ -88,8 +98,11 @@ func _pocket_pat() -> void:
 
         _label.queue_free_effect()
         await queue_free_effect()
+        get_parent().act_task_complete()
         queue_free()
 
+    else:
+        get_parent().act_task_complete()
 
 
 func _pocket_pickup() -> void:
@@ -101,18 +114,18 @@ func _pocket_pickup() -> void:
     _label.update_count(biscuits_array.size())
     _label.visible = true
 
-    # ビスケットを集計 -> mainに
-    ## NOTE:カード効果をつけるなら globalで一気に集計させる。
+    PocketEvent.emit_send_biscuits(biscuits_array.size(), 0)
+    get_parent().act_task_complete()
 
-   #####
-    PocketEvent.emit_send_biscuits(biscuits_array.size())
+func _tally_and_free():
     await _biscuits.tally_move_biscuits().finished
-
 
     await get_tree().create_timer(1.0).timeout
 
     _label.queue_free_effect()
     await queue_free_effect()
+    get_parent().tally_task_complete()
+
     queue_free()
 
 func switch_choice_ui(onoff: bool):

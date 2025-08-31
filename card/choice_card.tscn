@@ -4,9 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://b1xd80qd543sb" path="res://assets/img/shinnpurufure-mu-illust1.png" id="1_xew8q"]
 
 [node name="ChoiceCard" type="Node2D"]
+z_index = 4
 script = ExtResource("1_weoqj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 4
 position = Vector2(0, 8)
 scale = Vector2(1.81919, 1.43713)
 texture = ExtResource("1_xew8q")
@@ -20,3 +22,4 @@ mouse_filter = 2
 color = Color(0.791999, 0.791999, 0.791999, 1)
 
 [node name="Cards" type="Node2D" parent="."]
+z_index = 5

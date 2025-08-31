@@ -20,9 +20,7 @@ func count_up(num: int):
     await get_tree().create_timer(0.5).timeout
     _kati.play()
 
-
     await tween.finished
-
 
     phase_count = num
 

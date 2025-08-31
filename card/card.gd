@@ -2,10 +2,19 @@ extends Node2D
 
 @onready var _area2d = $Area2D
 
-@onready var _pic_pocket = $Pict/Pocket
-@onready var _pic_biscuits = $Pict/Biscuits
-@onready var _pic_hand = $Pict/Hand
-@onready var _pic_card4 = $Pict/CardPict4
+@onready var _card0 = $Pict/Card0
+@onready var _card1 = $Pict/Card1
+@onready var _card2 = $Pict/Card2
+@onready var _card3 = $Pict/Card3
+@onready var _card4 = $Pict/Card4
+@onready var _card5 = $Pict/Card5
+@onready var _card6 = $Pict/Card6
+@onready var _card7 = $Pict/Card7
+@onready var _card8 = $Pict/Card8
+@onready var _card9 = $Pict/Card9
+@onready var _card10 = $Pict/Card10
+
+@onready var _label = $CardLabel
 
 
 var card_type := []
@@ -13,6 +22,19 @@ var card_type := []
 var card_type_id: int = 0
 var _is_selected: bool = false
 
+var card_label := [
+        "Pocket +2x",
+        "+5 Biscuits \n when collected",
+        "Pat Bonus \n Max +10",
+        "50%: +30 \n 50%: -30",
+        "Pocket Size \n 10 → 30",
+        "+10 Phases",
+        "Random +1~20 \n Each Time",
+        "+3 per phase",
+        "Init biscuits \n +5",
+        "Success: ×2 \n Fail: 0 This phase",
+        "75%: +10 \n 25%: -5",
+    ]
 
 func _ready():
     _area2d.area_left_clicked.connect(choice_card)
@@ -20,19 +42,27 @@ func _ready():
     PocketEvent.card_selected.connect(other_selected)
 
     card_type = [
-        _pic_pocket,
-        _pic_biscuits,
-        _pic_hand,
-        _pic_card4,
-        _pic_card4,
-        _pic_card4
+        _card0,
+        _card1,
+        _card2,
+        _card3,
+        _card4,
+        _card5,
+        _card6,
+        _card7,
+        _card8,
+        _card9,
+        _card10,
     ]
 
+    _label.text = ""
 
 
 func change_sprite(type_id: int):
     card_type_id = type_id
     card_type[type_id].visible = true
+    _label.text =  card_label[type_id]
+
 
 func other_selected(_card_type):
     if not _is_selected:

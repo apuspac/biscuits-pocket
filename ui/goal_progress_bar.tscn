@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://cosegdqueeq4t"]
+
+[ext_resource type="Texture2D" uid="uid://yyvba55t2go8" path="res://assets/img/biscuit_flour_1_chocolate.png" id="1_2fvi2"]
+[ext_resource type="Script" uid="uid://c25wo7wd2wfxc" path="res://ui/goal_progress_bar.gd" id="1_5vy3l"]
+[ext_resource type="Texture2D" uid="uid://cl8k6cbnbsunn" path="res://assets/img/biscuit_flour_1.png" id="2_5vy3l"]
+[ext_resource type="AudioStream" uid="uid://ciap22ai21aio" path="res://assets/se/cursor-popopo.wav" id="4_qlj01"]
+[ext_resource type="AudioStream" uid="uid://da3fyos0hlj0y" path="res://assets/se/cursor-po.wav" id="5_jk2mp"]
+[ext_resource type="AudioStream" uid="uid://cpa6f2pdp5v6o" path="res://assets/se/cursor-kati2.wav" id="6_jk2mp"]
+
+[node name="GoalProgressBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_5vy3l")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+pivot_offset = Vector2(256, 256)
+fill_mode = 4
+texture_under = ExtResource("1_2fvi2")
+texture_progress = ExtResource("2_5vy3l")
+tint_under = Color(0.359069, 0.359069, 0.359069, 1)
+
+[node name="SE_Popopo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_qlj01")
+volume_db = -10.0
+bus = &"SE"
+
+[node name="SE_Po" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_jk2mp")
+
+[node name="SE_Kati2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_jk2mp")

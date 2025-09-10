@@ -20,6 +20,7 @@ var biscuits_num:
     set(value):
         _biscuits_num = value
         _biscuits_label.update_count(_biscuits_num)
+        _biscuits_bar.update_progress_bar(_biscuits_num)
 
 var card_effect_array := []
 var tmp_biscuits :int = 0
@@ -33,6 +34,7 @@ var end_scene_path := "res://game/end.tscn"
 @onready var pockets_node = $Pockets
 @onready var phase_label = $PhaseLabelDebug
 @onready var _biscuits_label = $BiscuitsCount
+@onready var _biscuits_bar = $GoalProgressBar
 @onready var _phase_label = $PhaseLabel
 @onready var _main_camera = $MainCamera2D
 @onready var _gameover_cover = $GameOverCover
@@ -139,7 +141,7 @@ func biscuits_tally():
 ## 毎回追加されると ぶちこわれちゃうやつは permanentlyへ
 func apply_effect_temporary():
 
-    var zero_flag := false
+    var nine_flag := false
     for card in card_effect_array:
         match card :
             1: # biscuits  # biscuitsの個数が +5とかに
@@ -162,12 +164,8 @@ func apply_effect_temporary():
                     _first_phase_for7 = phase_count
                 else:
                     tmp_biscuits += 3 * (phase_count - _first_phase_for7)
-            9: # 成功すると*2 失敗するとそのphase 0
-                var rand = randi_range(0,100)
-                if rand > 50:
-                    tmp_biscuits = tmp_biscuits * 2
-                else:
-                    zero_flag = true
+            9: # 成功すると*2 失敗するとそのphase 0, 処理的に最後にやらないとだめ。
+                    nine_flag = true
             10: # 75%で+10 25%で -5
                 var rand = randi_range(0,100)
                 if rand < 75:
@@ -177,8 +175,12 @@ func apply_effect_temporary():
             _:
                 pass
 
-    if zero_flag:
-        tmp_biscuits = 0
+    if nine_flag:
+        var rand = randi_range(0,100)
+        if rand > 50:
+            tmp_biscuits = tmp_biscuits * 2
+        else:
+            tmp_biscuits = 0
 
 
 
@@ -194,8 +196,8 @@ func apply_effect_permanently(card_type: int):
             card_effect_array.append(3)
         4: # pocketの容量が +20
             PocketEvent.additional_capacity += 20
-        5: # phase数 + 10
-            PocketEvent.additional_phase += 10
+        5: # phase数 + 10 これ大きすぎ 5でいい。
+            PocketEvent.additional_phase += 5
             _end_phase_num = 20 + PocketEvent.additional_phase
         6: # 毎回 1~20加算
             card_effect_array.append(6)
